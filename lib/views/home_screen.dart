@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Obx(() => Column(
+      body: Obx(() => (productController.isLoading == true.obs) ? Center( child: CircularProgressIndicator()) : Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(16),

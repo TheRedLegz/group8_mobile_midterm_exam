@@ -4,7 +4,7 @@ import 'package:shopx/services/remote_services.dart';
 
 class ProductController extends GetxController {
   var isLoading = true.obs;
-  var productList = List<Product>().obs;
+  var productList = [].obs;
 
   @override
   void onInit() {
@@ -12,5 +12,7 @@ class ProductController extends GetxController {
     super.onInit();
   }
 
-  void fetchProducts() async {}
+  void fetchProducts() async {
+    productList = await RemoteServices.fetchProducts();
+  }
 }
